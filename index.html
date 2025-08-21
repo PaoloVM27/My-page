@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Personal</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin: 0 auto 1rem;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary-color);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        section {
+            padding: 3rem 0;
+            background: white;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .about {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-category {
+            background: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .skill-category h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .skill-list {
+            list-style-type: none;
+        }
+        
+        .skill-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-img {
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .contact-btn:hover {
+            background-color: var(--primary-color);
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .skills-grid, .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="profile-img">
+                <!-- Reemplaza con tu inicial -->
+                <span>M</span>
+            </div>
+            <h1>Tu Nombre Completo</h1>
+            <p class="tagline">Estudiante de [Tu Carrera] | [Tu Universidad]</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>Sobre Mí</h2>
+            <div class="about">
+                <p>¡Hola! Soy [Tu Nombre], estudiante de [Tu Carrera] en [Tu Universidad]. Me apasiona [tus intereses] y estoy siempre buscando aprender nuevas tecnologías y habilidades.</p>
+                <p>En mi tiempo libre, disfruto de [tus hobbies]. Mi objetivo profesional es [tu meta profesional].</p>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Formación Académica</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Educación Universitaria</h3>
+                    <ul class="skill-list">
+                        <li><strong>[Nombre de tu Universidad]</strong> - [Tu Carrera] (Año de inicio - Presente)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Cursos Relevantes</h3>
+                    <ul class="skill-list">
+                        <li>[Curso 1]</li>
+                        <li>[Curso 2]</li>
+                        <li>[Curso 3]</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Habilidades</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Lenguajes de Programación</h3>
+                    <ul class="skill-list">
+                        <li>C</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>HTML/CSS</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Herramientas y Tecnologías</h3>
+                    <ul class="skill-list">
+                        <li>Git & GitHub</li>
+                        <li>Visual Studio Code</li>
+                        <li>Linux</li>
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Habilidades Blandas</h3>
+                    <ul class="skill-list">
+                        <li>Trabajo en equipo</li>
+                        <li>Resolución de problemas</li>
+                        <li>Aprendizaje rápido</li>
+                        <li>Comunicación efectiva</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Proyectos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">Imagen del Proyecto</div>
+                    <div class="project-info">
+                        <h3>Proyecto 1</h3>
+                        <p>Descripción breve de tu primer proyecto. Qué hace, qué tecnologías usaste, etc.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">Imagen del Proyecto</div>
+                    <div class="project-info">
+                        <h3>Proyecto 2</h3>
+                        <p>Descripción breve de tu segundo proyecto. Qué hace, qué tecnologías usaste, etc.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">Imagen del Proyecto</div>
+                    <div class="project-info">
+                        <h3>Proyecto 3</h3>
+                        <p>Descripción breve de tu tercer proyecto. Qué hace, qué tecnologías usaste, etc.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contacto</h2>
+            <p>Si deseas ponerte en contacto conmigo, no dudes en enviarme un mensaje a través de cualquiera de estas plataformas:</p>
+            <div class="contact-links">
+                <a href="mailto:tu.email@ejemplo.com" class="contact-btn">Email</a>
+                <a href="https://github.com/tuusuario" target="_blank" class="contact-btn">GitHub</a>
+                <a href="https://linkedin.com/in/tuusuario" target="_blank" class="contact-btn">LinkedIn</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Tu Nombre. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
