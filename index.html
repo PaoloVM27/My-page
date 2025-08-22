@@ -3,28 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Personal</title>
+    <title>Mi Portfolio - Ciencias de la Computación UNMSM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Variables de colores */
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --primary: #6a11cb;
+            --secondary: #2575fc;
+            --accent: #ff6b6b;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #20c997;
         }
         
+        /* Estilos generales */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             color: #333;
-            background-color: #f9f9f9;
+            line-height: 1.6;
         }
         
         .container {
@@ -33,277 +36,389 @@
             padding: 0 20px;
         }
         
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            box-shadow: var(--shadow);
-        }
-        
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid white;
-            margin: 0 auto 1rem;
-            background-color: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: var(--primary-color);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .tagline {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
         section {
-            padding: 3rem 0;
-            background: white;
-            margin: 1.5rem 0;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
+            padding: 60px 0;
         }
         
-        h2 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--secondary-color);
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            color: var(--dark);
         }
         
-        .about {
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(106, 17, 203, 0.4);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        /* Header y navegación */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
             display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        .skills-grid {
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 100px;
+            text-align: center;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%236a11cb" fill-opacity="0.1" d="M0,224L48,213.3C96,203,192,181,288,160C384,139,480,117,576,122.7C672,128,768,160,864,170.7C960,181,1056,171,1152,165.3C1248,160,1344,160,1392,160L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>') no-repeat bottom;
+            background-size: contain;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        
+        .hero-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 30px;
+            border: 5px solid white;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-details {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .detail-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: var(--light);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Motivación Section */
+        .motivation {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+        
+        .motivation .section-title {
+            color: white;
+        }
+        
+        .motivation-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        /* Hobbies Section */
+        .hobbies-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
         }
         
-        .skill-category {
-            background: var(--light-color);
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-        
-        .skill-category h3 {
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .skill-list {
-            list-style-type: none;
-        }
-        
-        .skill-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .project-card {
+        .hobby-card {
             background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
         
-        .project-card:hover {
-            transform: translateY(-5px);
+        .hobby-card:hover {
+            transform: translateY(-10px);
         }
         
-        .project-img {
-            height: 200px;
-            background-color: #ddd;
+        .hobby-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* Social Section */
+        .social {
+            background: var(--light);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .social-link {
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #777;
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 50%;
+            color: var(--primary);
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
-        .project-info {
-            padding: 1.5rem;
-        }
-        
-        .project-info h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .contact-btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background-color: var(--secondary-color);
+        .social-link:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(to right, var(--primary), var(--secondary));
             color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
         }
         
-        .contact-btn:hover {
-            background-color: var(--primary-color);
-        }
-        
+        /* Footer */
         footer {
-            background-color: var(--dark-color);
+            background: var(--dark);
             color: white;
             text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
+            padding: 40px 0;
         }
         
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--accent), var(--success));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            .skills-grid, .projects-grid {
-                grid-template-columns: 1fr;
+            .nav-links {
+                display: none;
             }
             
-            .contact-links {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
                 flex-direction: column;
-                align-items: center;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
-            <div class="profile-img">
-                <!-- Reemplaza con tu inicial -->
-                <span>M</span>
-            </div>
-            <h1>Tu Nombre Completo</h1>
-            <p class="tagline">Estudiante de [Tu Carrera] | [Tu Universidad]</p>
+            <nav>
+                <div class="logo">Portfolio</div>
+                <ul class="nav-links">
+                    <li><a href="#about">Sobre Mí</a></li>
+                    <li><a href="#motivation">Motivación</a></li>
+                    <li><a href="#hobbies">Hobbies</a></li>
+                    <li><a href="#social">Redes Sociales</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <div class="container">
-        <section id="about">
-            <h2>Sobre Mí</h2>
-            <div class="about">
-                <p>¡Hola! Soy [Tu Nombre], estudiante de [Tu Carrera] en [Tu Universidad]. Me apasiona [tus intereses] y estoy siempre buscando aprender nuevas tecnologías y habilidades.</p>
-                <p>En mi tiempo libre, disfruto de [tus hobbies]. Mi objetivo profesional es [tu meta profesional].</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Foto de perfil" class="hero-img">
+            <div class="hero-content">
+                <h1>Juan Pérez</h1>
+                <p>Estudiante de Ciencias de la Computación en la UNMSM</p>
+                <p>Lima, Perú</p>
+                <a href="#social" class="btn">Contáctame</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="education">
-            <h2>Formación Académica</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Educación Universitaria</h3>
-                    <ul class="skill-list">
-                        <li><strong>[Nombre de tu Universidad]</strong> - [Tu Carrera] (Año de inicio - Presente)</li>
-                    </ul>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Mi Trayectoria</h3>
+                    <p>Soy un apasionado estudiante de Ciencias de la Computación en la Universidad Nacional Mayor de San Marcos. Desde pequeño me ha fascinado el mundo de la tecnología y cómo esta puede transformar la sociedad.</p>
+                    <p>Mi objetivo es especializarme en inteligencia artificial y desarrollo de software, contribuyendo a proyectos innovadores que tengan un impacto positivo en la comunidad.</p>
                 </div>
-                <div class="skill-category">
-                    <h3>Cursos Relevantes</h3>
-                    <ul class="skill-list">
-                        <li>[Curso 1]</li>
-                        <li>[Curso 2]</li>
-                        <li>[Curso 3]</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>Habilidades</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Lenguajes de Programación</h3>
-                    <ul class="skill-list">
-                        <li>C</li>
-                        <li>Python</li>
-                        <li>JavaScript</li>
-                        <li>HTML/CSS</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Herramientas y Tecnologías</h3>
-                    <ul class="skill-list">
-                        <li>Git & GitHub</li>
-                        <li>Visual Studio Code</li>
-                        <li>Linux</li>
-                        <li>MySQL</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Habilidades Blandas</h3>
-                    <ul class="skill-list">
-                        <li>Trabajo en equipo</li>
-                        <li>Resolución de problemas</li>
-                        <li>Aprendizaje rápido</li>
-                        <li>Comunicación efectiva</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Proyectos</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">Imagen del Proyecto</div>
-                    <div class="project-info">
-                        <h3>Proyecto 1</h3>
-                        <p>Descripción breve de tu primer proyecto. Qué hace, qué tecnologías usaste, etc.</p>
+                <div class="about-details">
+                    <div class="detail-item">
+                        <h3><i class="fas fa-graduation-cap"></i> Educación</h3>
+                        <p><strong>Universidad Nacional Mayor de San Marcos</strong></p>
+                        <p>Ciencias de la Computación - Estudiante de 5to ciclo</p>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">Imagen del Proyecto</div>
-                    <div class="project-info">
-                        <h3>Proyecto 2</h3>
-                        <p>Descripción breve de tu segundo proyecto. Qué hace, qué tecnologías usaste, etc.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">Imagen del Proyecto</div>
-                    <div class="project-info">
-                        <h3>Proyecto 3</h3>
-                        <p>Descripción breve de tu tercer proyecto. Qué hace, qué tecnologías usaste, etc.</p>
+                    <div class="detail-item">
+                        <h3><i class="fas fa-map-marker-alt"></i> Ubicación</h3>
+                        <p>Lima, Perú</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact">
-            <h2>Contacto</h2>
-            <p>Si deseas ponerte en contacto conmigo, no dudes en enviarme un mensaje a través de cualquiera de estas plataformas:</p>
-            <div class="contact-links">
-                <a href="mailto:tu.email@ejemplo.com" class="contact-btn">Email</a>
-                <a href="https://github.com/tuusuario" target="_blank" class="contact-btn">GitHub</a>
-                <a href="https://linkedin.com/in/tuusuario" target="_blank" class="contact-btn">LinkedIn</a>
+    <!-- Motivación Section -->
+    <section id="motivation" class="motivation">
+        <div class="container">
+            <h2 class="section-title">Mi Motivación</h2>
+            <div class="motivation-content">
+                <p>Elegí la carrera de Ciencias de la Computación porque siempre me ha fascinado la capacidad de crear soluciones innovadoras a través del código. La tecnología avanza a pasos agigantados y quiero ser parte de esa revolución, contribuyendo con proyectos que tengan un impacto real en la sociedad.</p>
+                <p>La Universidad Nacional Mayor de San Marcos me ha brindado una base sólida en fundamentos teóricos y prácticos, permitiéndome explorar diversas áreas como la inteligencia artificial, el desarrollo web y la ciencia de datos.</p>
+                <p>Mi motivación diaria es el deseo constante de aprender y superarme, enfrentando nuevos retos que me permitan crecer tanto personal como profesionalmente.</p>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="hobbies">
+        <div class="container">
+            <h2 class="section-title">Mis Hobbies</h2>
+            <div class="hobbies-grid">
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Programación</h3>
+                    <p>Disfruto desarrollar proyectos personales y participar en hackathons para mejorar mis habilidades.</p>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Lectura</h3>
+                    <p>Me encanta leer libros de ciencia ficción y tecnología para expandir mis horizontes.</p>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Videojuegos</h3>
+                    <p>Jugar videojuegos me ayuda a relajarme y a encontrar inspiración para mis proyectos.</p>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <h3>Senderismo</h3>
+                    <p>Explorar los paisajes naturales del Perú es una de mis actividades favoritas los fines de semana.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Section -->
+    <section id="social" class="social">
+        <div class="container">
+            <h2 class="section-title">Redes Sociales</h2>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2023 Tu Nombre. Todos los derechos reservados.</p>
+            <div class="footer-logo">Portfolio</div>
+            <p>Estudiante de Ciencias de la Computación - UNMSM</p>
+            <p>Lima, Perú</p>
+            <p>© 2023 Todos los derechos reservados</p>
         </div>
     </footer>
 </body>
