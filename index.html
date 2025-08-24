@@ -1,296 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mi Portfolio - Ciencias de la Computación UNMSM</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
-        /* Variables de colores */
+        /* Paleta azul acero (menos viva) */
         :root {
-            --primary: #6a11cb;
-            --secondary: #2575fc;
-            --accent: #ff6b6b;
-            --light: #f8f9fa;
-            --dark: #212529;
+            --primary: #3b5b74;   /* steel blue oscuro */
+            --secondary: #6b8aa3; /* steel blue claro */
+            --accent: #e76f51;
+            --light: #f4f6f8;
+            --dark: #1f2933;
             --success: #20c997;
         }
-        
-        /* Estilos generales */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        section {
-            padding: 60px 0;
-        }
-        
-        h1, h2, h3 {
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: white;
-            border: none;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3);
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(106, 17, 203, 0.4);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
-        
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            margin: 15px auto;
-            border-radius: 2px;
-        }
-        
-        /* Header y navegación */
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 150px 0 100px;
-            text-align: center;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%236a11cb" fill-opacity="0.1" d="M0,224L48,213.3C96,203,192,181,288,160C384,139,480,117,576,122.7C672,128,768,160,864,170.7C960,181,1056,171,1152,165.3C1248,160,1344,160,1392,160L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>') no-repeat bottom;
-            background-size: contain;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: #555;
-        }
-        
-        .hero-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 30px;
-            border: 5px solid white;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* About Section */
-        .about {
-            background-color: white;
-        }
-        
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 40px;
-        }
-        
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .about-details {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .detail-item {
-            margin-bottom: 20px;
-            padding: 20px;
-            background: var(--light);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        /* Motivación Section */
-        .motivation {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-        }
-        
-        .motivation .section-title {
-            color: white;
-        }
-        
-        .motivation-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        /* Hobbies Section */
-        .hobbies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .hobby-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .hobby-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .hobby-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        /* Social Section */
-        .social {
-            background: var(--light);
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 70px;
-            height: 70px;
-            background: white;
-            border-radius: 50%;
-            color: var(--primary);
-            font-size: 1.8rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .social-link:hover {
-            transform: translateY(-5px);
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: white;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 40px 0;
-        }
-        
-        .footer-logo {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, var(--accent), var(--success));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        /* Responsive */
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: linear-gradient(135deg, #eef2f5 0%, #d7dee6 100%); color: #333; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 60px 0; }
+        h1, h2, h3 { margin-bottom: 20px; color: var(--dark); }
+
+        .btn { display: inline-block; padding: 12px 25px; background: linear-gradient(to right, var(--primary), var(--secondary)); color: #fff; border: none; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all .3s ease; box-shadow: 0 4px 15px rgba(59, 91, 116, .35); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(59, 91, 116, .45); }
+
+        .section-title { text-align: center; margin-bottom: 50px; position: relative; }
+        .section-title:after { content: ''; display: block; width: 80px; height: 4px; background: linear-gradient(to right, var(--primary), var(--secondary)); margin: 15px auto; border-radius: 2px; }
+
+        /* Header */
+        header { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: #fff; padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,.1); }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: 700; text-transform: lowercase; }
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin-left: 30px; }
+        .nav-links a { color: #fff; text-decoration: none; font-weight: 500; transition: all .3s ease; }
+        .nav-links a:hover { color: #e2e8f0; }
+
+        /* Hero */
+        .hero { padding: 150px 0 100px; text-align: center; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%233b5b74" fill-opacity="0.12" d="M0,224L48,213.3C96,203,192,181,288,160C384,139,480,117,576,122.7C672,128,768,160,864,170.7C960,181,1056,171,1152,165.3C1248,160,1344,160,1392,160L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"/></svg>') no-repeat bottom; background-size: contain; }
+        .hero-content { max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; color: #4b5563; }
+        .hero-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin: 0 auto 30px; border: 5px solid #fff; box-shadow: 0 8px 30px rgba(0,0,0,.15); }
+
+        /* About */
+        .about { background-color: #fff; }
+        .about-content { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
+        .about-text, .about-details { flex: 1; min-width: 300px; }
+        .detail-item { margin-bottom: 20px; padding: 20px; background: var(--light); border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,.05); }
+
+        /* Motivación */
+        .motivation { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: #fff; }
+        .motivation .section-title { color: #fff; }
+        .motivation-content { max-width: 800px; margin: 0 auto; text-align: center; }
+
+        /* Hobbies */
+        .hobbies-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .hobby-card { background: #fff; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,.1); transition: transform .3s ease; }
+        .hobby-card:hover { transform: translateY(-10px); }
+        .hobby-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+
+        /* Contacto (texto + enlace) */
+        .social { background: var(--light); }
+        .contact-list { display: grid; gap: 16px; justify-content: center; }
+        .contact-item { display: inline-flex; align-items: center; gap: 12px; padding: 12px 18px; background: #fff; border-radius: 999px; text-decoration: none; color: var(--dark); box-shadow: 0 5px 15px rgba(0,0,0,.08); transition: all .3s ease; }
+        .contact-item i { font-size: 1.2rem; color: var(--primary); }
+        .contact-item:hover { transform: translateY(-3px); background: linear-gradient(to right, var(--primary), var(--secondary)); color: #fff; }
+        .contact-item:hover i { color: #fff; }
+
+        footer { background: var(--dark); color: #fff; text-align: center; padding: 40px 0; }
+        .footer-logo { font-size: 2rem; font-weight: 700; margin-bottom: 20px; text-transform: lowercase; background: linear-gradient(to right, var(--secondary), var(--success)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.4rem; }
+            .about-content { flex-direction: column; }
         }
     </style>
 </head>
@@ -299,21 +84,22 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">Portfolio</div>
+                <div class="logo">my page</div>
                 <ul class="nav-links">
                     <li><a href="#about">Sobre Mí</a></li>
                     <li><a href="#motivation">Motivación</a></li>
                     <li><a href="#hobbies">Hobbies</a></li>
-                    <li><a href="#social">Redes Sociales</a></li>
+                    <li><a href="#social">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Foto de perfil" class="hero-img">
+            <!-- Foto de perfil reemplazada -->
+            <img src="Foto.jpeg" alt="Foto de perfil" class="hero-img" />
             <div class="hero-content">
                 <h1>Paolo Villavicencio Merella</h1>
                 <p>Estudiante de Ciencias de la Computación en la UNMSM</p>
@@ -323,7 +109,7 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Sobre mí -->
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">Sobre Mí</h2>
@@ -348,74 +134,73 @@
         </div>
     </section>
 
-    <!-- Motivación Section -->
+    <!-- Motivación -->
     <section id="motivation" class="motivation">
         <div class="container">
             <h2 class="section-title">Mi Motivación</h2>
             <div class="motivation-content">
                 <p>Elegí la carrera de Ciencias de la Computación porque siempre me ha fascinado la capacidad de crear soluciones innovadoras a través del código. La tecnología avanza a pasos agigantados y quiero ser parte de esa revolución, contribuyendo con proyectos que tengan un impacto real en la sociedad.</p>
-                <p>La Universidad Nacional Mayor de San Marcos me esta brindando una base sólida en fundamentos teóricos y prácticos, permitiéndome explorar diversas áreas como la inteligencia artificial, el desarrollo web y la ciencia de datos.</p>
+                <p>La Universidad Nacional Mayor de San Marcos me está brindando una base sólida en fundamentos teóricos y prácticos, permitiéndome explorar diversas áreas como la inteligencia artificial, el desarrollo web y la ciencia de datos.</p>
                 <p>Mi motivación diaria es el deseo constante de aprender y superarme, enfrentando nuevos retos que me permitan crecer tanto personal como profesionalmente.</p>
             </div>
         </div>
     </section>
 
-    <!-- Hobbies Section -->
+    <!-- Hobbies -->
     <section id="hobbies" class="hobbies">
         <div class="container">
             <h2 class="section-title">Mis Hobbies</h2>
             <div class="hobbies-grid">
                 <div class="hobby-card">
-                    <div class="hobby-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
+                    <div class="hobby-icon"><i class="fas fa-code"></i></div>
                     <h3>Programación</h3>
                     <p>Disfruto desarrollar proyectos personales y aprender nuevos lenguajes de programación.</p>
                 </div>
                 <div class="hobby-card">
-                    <div class="hobby-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
+                    <!-- Ícono corregido para Películas y series -->
+                    <div class="hobby-icon"><i class="fas fa-film"></i></div>
                     <h3>Películas y series</h3>
-                    <p>Me encanta ver peliculas y series de ciencia ficción y tecnología para expandir mi creatividad.</p>
+                    <p>Me encanta ver películas y series de ciencia ficción y tecnología para expandir mi creatividad.</p>
                 </div>
                 <div class="hobby-card">
-                    <div class="hobby-icon">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
+                    <div class="hobby-icon"><i class="fas fa-gamepad"></i></div>
                     <h3>Videojuegos</h3>
                     <p>Jugar videojuegos me ayuda a relajarme y a encontrar inspiración para mis proyectos.</p>
                 </div>
                 <div class="hobby-card">
-                    <div class="hobby-icon">
-                        <i class="fas fa-hiking"></i>
-                    </div>
+                    <!-- Ícono corregido para Lectura -->
+                    <div class="hobby-icon"><i class="fas fa-book-open"></i></div>
                     <h3>Lectura</h3>
-                    <p>Suelo leer en mis ratos libres sobre revistas, articulos y libros de tecnología para mantenerme informado de los avances en el mundo.</p>
+                    <p>Suelo leer revistas, artículos y libros de tecnología para mantenerme informado de los avances en el mundo.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Social Section -->
+    <!-- Contacto -->
     <section id="social" class="social">
         <div class="container">
-            <h2 class="section-title">Redes Sociales</h2>
-            <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-list">
+                <a class="contact-item" href="https://github.com/PaoloVM27" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub: https://github.com/PaoloVM27</span>
+                </a>
+                <a class="contact-item" href="https://x.com/MerellaAlo29717" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <span>X: https://x.com/MerellaAlo29717</span>
+                </a>
+                <a class="contact-item" href="https://www.linkedin.com/in/villavicencio-merella-paolo-alonso-b17378380" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span>LinkedIn: https://www.linkedin.com/in/villavicencio-merella-paolo-alonso-b17378380</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-logo">My page</div>
+            <div class="footer-logo">my page</div>
             <p>Estudiante de Ciencias de la Computación - UNMSM</p>
             <p>Lima, Perú</p>
             <p>© 2025 Todos los derechos reservados</p>
